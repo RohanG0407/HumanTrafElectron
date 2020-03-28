@@ -12,6 +12,7 @@ process.env.NODE_ENV = 'development';
 
 app.on('ready', function () {
 
+
     mainWindow = new BrowserWindow({
         webPreferences: {
             nodeIntegration: true
