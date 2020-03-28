@@ -25,6 +25,7 @@ npm install --save electron
 npm install --save firebase
 npm install --save firebase-admin
 npm install --save python-shell
+npm install mapbox-gl --save
 
 ```
 
