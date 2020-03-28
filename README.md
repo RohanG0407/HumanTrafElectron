@@ -27,3 +27,19 @@ npm install --save firebase-admin
 npm install --save python-shell
 
 ```
+
+
+### Running the Program
+
+CD to the folder where you downloading everything
+```
+cd /WebstormProjects/HumanTrafElectron
+
+```
+
+Then run npm start
+
+```
+npm start
+
+```
