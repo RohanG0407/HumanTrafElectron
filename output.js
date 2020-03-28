@@ -1,25 +1,25 @@
     var count = 1;
-    var max = 5;
-    var player=document.getElementById('myVideo');
-    var mp4Vid = document.getElementById('mp4Source');
+    var max = 2;
+
 
 function nextVideo() {
-    count++;
-    if (count==max) {
-        var button = document.getElementById('next');
-        button.disabled = true;
+    
+    
+    if (count!=max) {
+        count++;
+        document.getElementById('mp4Source').setAttribute('src', 'video'+count+'.mp4');
+        document.getElementById('video').load();
+        document.getElementById('video').play();
     }
-    $(mp4Vid).attr('src', "video/video"+count+".mp4");
-    player.load();
-    player.play();
+    
 }
-function preVideo() {
-    count--;
-    if (count == 0) {
-        button = document.getElementById('previous');
-        button.disabled = true;
+function previousVideo() {
+    
+    if (count != 1) {
+        count--;
+        document.getElementById('mp4Source').setAttribute('src', 'video'+count+'.mp4');
+        document.getElementById('video').load();
+        document.getElementById('video').play(); 
     }
-    $(mp4Vid).attr('src', "video/video" + count + ".mp4");
-    player.load();
-    player.play();
+    
 }

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <link href='outputWindow.css' rel='stylesheet'/>
+<script type="text/javascript" src="output.js"></script>
 </head>
 <body>
 
@@ -15,12 +16,21 @@
     <div id="videowrapper">
         <!--width="720" height="540"-->
         <video id="video" poster="thumbnail.jpg" controls>
-            <source src="video.mp4" type=video/mp4 />
+            <source id='mp4Source' src="video1.mp4" type=video/mp4 />
         </video>
     </div>
 
-    <button class="button" disabled>Previous</button>
-    <button class="button">Next</button>
+    <button class="button" onclick="previousVideo()">Previous</button>
+    <button class="button" onclick="nextVideo()">Next</button>
+
+    <div id="statistics">
+        <div id="accuracy">Accuracy: </div>
+        <div id="model">Model: </div>
+        <div id="year">Year: </div>
+        <div id="make">Make: </div>
+        <div id="color">Color: </div>
+        <div id="license_plate">License Plate: </div>
+    </div>
 </div>
 
 </body>
