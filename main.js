@@ -4,10 +4,11 @@ const path = require("path");
 const firebase = require("firebase/app");
 require("firebase/auth");
 
-const {app, BrowserWindow, Menu} = electron;
+const { app, BrowserWindow, Menu } = electron;
 
 let mainWindow;
 let firebaseConfig;
+let outputWindow;
 process.env.NODE_ENV = 'development';
 
 app.on('ready', function () {
@@ -25,7 +26,7 @@ app.on('ready', function () {
     });
 
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'mainWindow.html'),
+        pathname: path.join(__dirname, 'outputWindow.html'),
         protocol: 'file:',
         slashes: true
     }));
@@ -63,10 +64,10 @@ const mainMenuTemplate = [
     mainMenuTemplate.unshift({});
 }*/
 
-if(process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
     mainMenuTemplate.push(
         {
-            label:"Dev Tools",
+            label: "Dev Tools",
             submenu: [
                 {
                     label: "Toggle Dev Tools",
@@ -78,5 +79,3 @@ if(process.env.NODE_ENV !== 'production') {
 
         })
 };
-
-
