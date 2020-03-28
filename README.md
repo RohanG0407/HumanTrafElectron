@@ -1,6 +1,5 @@
 # HumanTraf
 
-One Paragraph of project description goes here
 
 ### Prerequisites
 
@@ -9,6 +8,8 @@ NodeJS
 ```
 
 ### Installing
+
+Clone/Download repository
 
 CD to the folder where your downloaded your cloned repository (it will be different for everyone for me its there)
 
