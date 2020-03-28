@@ -1,3 +1,9 @@
 #map {
-    margin-left: 30%;
+     margin-left: 30%;
+ }
+
+.navbar {
+    width: 20%;
+    height: 100%;
+    border: 15px solid gray;
 }
