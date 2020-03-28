@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,21 +9,27 @@
     <link href='mainWindow.css' rel='stylesheet' />
 </head>
 <body>
+<div id="container">
+    <div class="navbar">
+        <a href="mainWindow.html">
+            <img src="homeIMG.png" alt="image">
+        </a><br>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oYW5nIiwiYSI6ImNqdGM1eThxcjB0OHU0NHA0NnE2ZHRsa2UifQ.MV8JZhwT4IeduQPcy2zSAg';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/rohang/ck8bpt2bn29951iqielnml0tq'
-    });
-</script>
+        <a href="mainWindow.html">Import</a><br>
+        <a href="mainWindow.html">Inbox</a>
+    </div>
 
-<div class="navbar">
-    <a href="mainWindow.html">Home</a>
-    <a href="mainWindow.html">Import</a>
-    <a href="mainWindow.html">Inbox</a>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oYW5nIiwiYSI6ImNqdGM1eThxcjB0OHU0NHA0NnE2ZHRsa2UifQ.MV8JZhwT4IeduQPcy2zSAg';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/rohang/ck8bpt2bn29951iqielnml0tq'
+        });
+    </script>
 </div>
+
+
 
 
 <script>

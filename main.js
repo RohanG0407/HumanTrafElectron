@@ -13,8 +13,12 @@ process.env.NODE_ENV = 'development';
 app.on('ready', function () {
 
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 960,
+        height: 720,
+        resizable: true,
+        maximizable: true,
+        minHeight: 600,
+        minWidth: 800,
         webPreferences: {
             nodeIntegration: true
         }
