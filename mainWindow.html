@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='mainWindow.css' rel='stylesheet' />
 </head>
 <body>
 
-<p>Hello ojj</p>
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oYW5nIiwiYSI6ImNqdGM1eThxcjB0OHU0NHA0NnE2ZHRsa2UifQ.MV8JZhwT4IeduQPcy2zSAg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/rohang/ck8bpt2bn29951iqielnml0tq'
+    });
+</script>
 
+<div class="navbar">
+    <a href="mainWindow.html">Home</a>
+    <a href="mainWindow.html">Import</a>
+    <a href="mainWindow.html">Inbox</a>
+</div>
+
+
+<script>
+    require('./userAuth.js')
+</script>
 </body>
+
 </html>
