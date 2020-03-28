@@ -1,8 +1,11 @@
 #map {
-     margin-left: 100px;
+     margin-top: 50px;
+     width: 75%;
+     height: 75%;
  }
 body {
     margin: 0;
+    font-family: sans-serif;
 }
 .navbar {
     overflow: hidden;
