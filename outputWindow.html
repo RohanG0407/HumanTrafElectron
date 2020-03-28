@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href='outputWindow.css' rel='stylesheet' />
+<link href='outputWindow.css' rel='stylesheet'/>
 </head>
 <body>
+
+<div class="navbar">
+    <a href="mainWindow.html">Home</a>
+    <a href="outputWindow.html">Import</a>
+    <a href="mainWindow.html">Inbox</a>
+    <a href="mainWindow.html">User Options</a>
+</div>
+<div id="video_stuff">
     <div id="videowrapper">
         <!--width="720" height="540"-->
-        <video width=200 height=200 poster="thumbnail.jpg" controls>
+        <video id="video" poster="thumbnail.jpg" controls>
             <source src="video.mp4" type=video/mp4 />
         </video>
     </div>
 
-    <h6>Input          Accuracy(%)          Model          Location</h6>
-    <h6>Color:                                                     </h6>
-    <h6>Time:                                                      </h6>
-    <h6>Day:                                                       </h6>
-    <h6>Model:                                                     </h6>
+    <button class="button" disabled>Previous</button>
+    <button class="button">Next</button>
+</div>
+
 </body>
 </html>
