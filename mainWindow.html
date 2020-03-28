@@ -9,34 +9,17 @@
     <link href='mainWindow.css' rel='stylesheet' />
 </head>
 <body>
-    <div class="navbar">
-        <a href="mainWindow.html">Home</a>
-        <a href="mainWindow.html">Import</a>
-        <a href="mainWindow.html">Inbox</a>
-        <a href="mainWindow.html">User Options</a>
-    </div>
+<div class="navbar">
+    <a href="mainWindow.html">Home</a>
+    <a href="mainWindow.html">Import</a>
+    <a href="mainWindow.html">Inbox</a>
+    <a href="mainWindow.html">User Options</a>
+</div>
 <div id="container">
 
     <div id='map'></div>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oYW5nIiwiYSI6ImNqdGM1eThxcjB0OHU0NHA0NnE2ZHRsa2UifQ.MV8JZhwT4IeduQPcy2zSAg';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/rohang/ck8bpt2bn29951iqielnml0tq',
-        });
-
-        map.addControl(
-        new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-            trackUserLocation: true
-        })
-        );
-        var navigator = new Navigator;
-        var pos = navigator.geolocation.getCurrentPosition(); 
-        moveTo(pos);
-        
+        require('./map.js')
     </script>
 </div>
 

@@ -66,7 +66,7 @@ const mainMenuTemplate = [
 if(process.env.NODE_ENV !== 'production') {
     mainMenuTemplate.push(
         {
-        label:"Dev Tools",
+            label:"Dev Tools",
             submenu: [
                 {
                     label: "Toggle Dev Tools",
@@ -76,7 +76,7 @@ if(process.env.NODE_ENV !== 'production') {
                 }
             ]
 
-    })
+        })
 };
 
 
