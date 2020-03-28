@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-auth.js"></script>
+
+</head>
+<body>
+
+<form id="login">
+    <label for="user">Enter username</label><br>
+    <input type="text" id="user" name="user"><br>
+    <label for="password"> Enter password</label><br>
+    <input type="password" id="password" name="password"><br>
+</form>
+
+<button id="signIn">Sign In</button><br>
+<button id="signUp">Sign Up</button>
+
+<script>
+    require('./userAuth.js')
+</script>
+</body>
+</html>
