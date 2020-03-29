@@ -42,7 +42,7 @@ signIn.addEventListener('click', function () {
 
     firebase.auth().signInWithEmailAndPassword(email,password).then(function () {
         //If user successfully signs in then go to home page
-        window.location.href = "mainWindow.html";
+        document.location.href = "mainWindow.html";
 
       //logs errors
     }).catch(function (error) {
