@@ -1,17 +1,13 @@
-var realFileBtn = document.getElementById("real-file");
+var realFileBtn = document.getElementById("file_button");
 var realReqBtn = document.getElementById("submitRequests");
-var customBtn = document.getElementById("custom-button");
-var customTxt = document.getElementById("custom-text");
-var customRequestBtn = document.getElementById("custom-requestbutton");
+var customTxt = document.getElementById("no_file");
 var requestTxt = document.getElementById("request-text");
 var fs = require('fs');
 var path = require('path');
-customBtn.addEventListener("click", function () {
-    realFileBtn.click();
-});
+
 
 realReqBtn.addEventListener("click", function(){
-    document.getElementById("car_color").value = "";
+    document.getElementById("car_type").value = "";
     document.getElementById("car_model").value = "";
     document.getElementById("address").value = "";
     document.getElementById("radius").value = "";
@@ -24,14 +20,14 @@ realReqBtn.addEventListener("click", function(){
 
 });
 
-realFileBtn.addEventListener("change", function () {
+realFileBtn.addEventListener("click", function () {
     if (realFileBtn.value) {
         customTxt.innerHTML = realFileBtn.value.match(
             /[\/\\]([\w\d\s\.\-\(\)]+)$/
         )[1]
-        customTxt.innerHTML += " uploaded successfully!";
+        customTxt.innerHTML = "Upload successful!";
 
-        const thePath = path.join(document.getElementById('real-file').files[0].path);
+        const thePath = path.join(document.getElementById('file_button').files[0].path);
         const newPath = path.join(__dirname, '/uploads/test.mp4');
         fs.copyFile(thePath, newPath, function (err) {
             if (err)

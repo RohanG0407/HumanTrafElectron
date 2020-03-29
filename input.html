@@ -14,39 +14,39 @@
             <a href="mainWindow.html">User Options</a>
         </div>
         
-        <input type="file" id="real-file" hidden="hidden" multiple="multiple" />
-        <button type="button" id="custom-button" class="btn" style="width:30%;height:15%;position: absolute; left:6.5%; top: 10%; font-size:4vw">Upload Videos</button>
-        <p><span id="custom-text">No file chosen, yet.</span> </p>
-<!--        <p><span id="request-text">Request Sent Successfully!</span> </p>-->
-        
-        <div id="requestForm"> 
-            <form>
-                <fieldset>
-                    
-                    <label id= "car_color_label"> Color:</label>
-                    <input id= 'car_color' type="text" class="form-control" placeholder="Black(Example)">
-               
+        <div id='container'>
+            <div id='left'>
+                <label for='file_button' id='file_button_label'>
+                    Choose Video File<input type='file' id='file_button'>
+                </label>
+                <span id='no_file'>No file chosen, yet</span>
+                <div id='video_preview'>
+
+                </div>
+            </div>
+            <div id='right'>
+                <div class="box1">
+                </div>
                 
-                    <label id="car_model_label">Car Model:</label>
+                <fieldset id='request_footage_form'>
+                    <legend id='legend'>Request Footage</legend> 
+                    <label class="label"> Type:</label>
+                    <input id= 'car_type' type="text" class="form-control" placeholder="Sedan(Example)">
+                
+                
+                    <label class="label">Car Model:</label>
                     <input id='car_model' type="text" class="form-control" placeholder='Honda Civic'>
                 
-                    <label id="address_label">Address:</label>
+                    <label class="label">Address:</label>
                     <input id='address' type="text" class="form-control" placeholder='42 Legends Way'>
                 
-                    <label id="radius_label">Radius:</label>
-                   <input id="radius" type="text" class="form-control" placeholder='10 Miles'>
-              
-                    <button id="submitRequests" type="button" class="btn" style="width:30%;height:20%; font-size:2vw">Submit Request</button>
+                    <label class="label">Radius:</label>
+                    <input id="radius" type="text" class="form-control" placeholder='10 Miles'>
+                
+                    <button id="submitRequests" type="button" class="btn">Submit Request</button>
                     <span id="request-text"></span> 
                 </fieldset>
-            </form>
-        </div>
-
-        <div class="box">
-            <center><h1 style="font-size:3vw">Request Footage</h1></center>
-        </div>
-        <div class="box1">
-            <center><h1 style="font-size:3vw">Map</h1></center>
+            </div>
         </div>
 
         <script>
