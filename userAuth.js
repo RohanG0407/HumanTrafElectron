@@ -1,6 +1,7 @@
+//firebase API config/key
 const firebase = require("firebase/app");
 require("firebase/auth");
-//firebase API config/key
+
 firebaseConfig = {
     apiKey: "AIzaSyDQm4jUuneS38vvPSjwhCP7JnT4IxQUtT8",
     databaseURL: "https://carnet-e1efe.firebaseio.com",
@@ -21,7 +22,7 @@ var signUp = document.getElementById('signUp');
 //When user clicks signUP button
 signUp.addEventListener('click', function () {
     var email = document.getElementById('user').value;
-    var password = document.getElementById('pass').value;
+    var password = document.getElementById('password').value;
 
     //Create a user in firebase and log errors
     firebase.auth().createUserWithEmailAndPassword(email,password).then(function () {
@@ -39,7 +40,7 @@ signUp.addEventListener('click', function () {
 //When user clicks signIn button
 signIn.addEventListener('click', function () {
     var email = document.getElementById('user').value;
-    var password = document.getElementById('pass').value;
+    var password = document.getElementById('password').value;
 
     firebase.auth().signInWithEmailAndPassword(email,password).then(function () {
         //If user successfully signs in then go to home page
@@ -47,10 +48,10 @@ signIn.addEventListener('click', function () {
 
         //logs errors
     }).catch(function (error) {
-        console.log("Error")
         if(error != null) {
             console.log(error.message);
             return;
         }
     })
 });
+

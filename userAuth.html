@@ -5,30 +5,25 @@
     <title>User Login</title>
     <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-auth.js"></script>
-    <link href='userAuth.css' rel='stylesheet'/>
+    <link href="userAuth.css" rel="stylesheet">
 
 </head>
 <body>
-<div id="authentication">
-    <form>
-        <div class="form-group">
-            <label id='user_label' for="user">Email address</label>
-            <input id='user' type="email" class="form-control" placeholder='johnny@appleseed.com'>
-        </div>
-        <div class="form-group">
-            <label id='pass_label' for="pass">Password</label>
-            <input id='pass' type="password" class="form-control" >
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="checkBox">
-            <label id='check' class="form-check-label" for="checkBox">Law Enforcement</label>
-        </div>
-        <button id="signIn" type="submit" class="btn">Sign in</button>
-        <button id="signUp" class='btn'>Sign Up</button>
-      </form>
-    </div>
-    
 
-<script src='userAuth.js'></script>
+<form id="login">
+    <label id='user_label' for="user">Enter username</label><br>
+    <input type="text" id="user" name="user"><br>
+    <label for="password" id="pass_label">Enter password</label><br>
+    <input type="password" id="password" name="password"><br>
+    <input type="checkbox" class="form-check-input" id="checkBox">
+    <label id="check" class="form-check-label" for="checkBox">Law Enforcement</label>
+</form>
+
+<button id="signIn" class="btn">Sign In</button><br>
+<button id="signUp" class="btn">Sign Up</button>
+
+<script>
+    require('./userAuth.js')
+</script>
 </body>
 </html>
