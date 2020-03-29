@@ -10,43 +10,21 @@
 </head>
 <body>
 
-
 <fieldset id='login'>
     <legend style='color: white'>Authentication</legend>
     <label id='user_label' for="user">Enter username</label><br>
     <input type="text" class='form-control' id="user" name="user"><br>
     <label for="password" id="pass_label">Enter password</label><br>
     <input type="password" class='form-control' id="password" name="password"><br>
+    <label id='organization_label' for='organization'>Organization Name</label>
+    <input type="text" class='form-control' id='organization' name='organization'>
+    <label id='address_label' for='address'>Organization Address</label>
+    <input type='text' class='form-control' id='address' name='address'>
     <input type="checkbox" class="form-check-input" id="checkBox" onclick="myFunction()">
-    <script>
-        function myFunction() {
-            var checkBox = document.getElementById('checkBox');
-            var form = document.getElementById('nonLawEnforcement');
-            if(checkBox.checked == true) {
-                form.style.display = "block";
-            } else {
-                form.style.display = 'none';
-            }
-        }
-    </script>
-    <label id="check" class="form-check-label" for="checkBox">Not Law Inforcement</label><br>
+    <label id="check" class="form-check-label" for="checkBox">Law Enforcement</label><br>
     <button id="signIn" class="btn">Sign In</button>
     <button id="signUp" class="btn">Sign Up</button>
 </fieldset>
-
-
-
-
-<form id='nonLawEnforcement'>
-    <fieldset class=field>
-        <legend>Non Law Enforcement Additional Information</legend>
-        <label id='organization_label' for='organization'>Organization Name</label>
-        <input type="text" class='form-control' id='organization' name='organization'>
-        <label id='address_label' for='address'>Organization Address</label>
-        <input type='text' class='form-control' id='address' name='address'>
-        <button id="signUp2" class="btn">Sign Up</button>
-    </fieldset>
-</form>
 
 <script src="main.js"></script>
 <script src="./userAuth.js"></script>
