@@ -15,7 +15,11 @@
     <a href="mainWindow.html">Home</a>
     <a href="mainWindow.html">Import</a>
     <a href="mainWindow.html">Inbox</a>
-    <label id='account_info'>Account Type: </label>
+    <label id='account_type'>Account Type: </label>
+    <script type='text/javascript'>
+        document.getElementById('account_type').innerText = "Account Type: " + 
+    </script>
+    <script src='./userAuth.js'></script>
     <button id='logout' onclick='logOut()'>Logout</button>
 </div>
 <div id='container'>
