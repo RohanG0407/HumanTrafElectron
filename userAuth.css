@@ -1,0 +1,16 @@
+body {
+    /* margin: 0; */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(100,100,100);
+}
+
+#authentication {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#user_label, #pass_label, #check {
+    color: #f2f2f2;
+}
