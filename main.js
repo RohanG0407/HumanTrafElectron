@@ -5,7 +5,6 @@ const path = require("path");
 const {app, BrowserWindow, Menu} = electron;
 
 let mainWindow;
-let firebaseConfig;
 process.env.NODE_ENV = 'development';
 
 app.on('ready', function () {

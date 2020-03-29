@@ -29,7 +29,7 @@ function previousVideo() {
 
 }
 console.log("123");
-window.onload = function what() { 
+window.onload = function what() {
     document.getElementById('accuracy').innerHTML = 'Accuracy: ' + this.accuracy + "%";
     document.getElementById('model').innerHTML = 'Model: ' + this.model;
     document.getElementById('make').innerHTML = 'Make: ' + this.make;

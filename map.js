@@ -1,4 +1,27 @@
 var location = [-73.780070, 42.859790];
+const fs = require('fs');
+
+
+firebaseConfig = {
+    apiKey: "AIzaSyDQm4jUuneS38vvPSjwhCP7JnT4IxQUtT8",
+    databaseURL: "https://carnet-e1efe.firebaseio.com",
+    projectId: "carnet-e1efe",
+    storageBucket: "carnet-e1efe.appspot.com",
+    messagingSenderId: "1002956662880",
+    appId: "1:1002956662880:web:5f2597bf17eaa7319e3b05",
+    measurementId: "G-FSHPMG9M89"
+};
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+
+
+
+db = firebase.firestore();
+
+
+
 marketDATA = [
     {
         company: "marshalls",
@@ -13,6 +36,12 @@ marketDATA = [
         location: [-73.814537,42.711330]
     }
 ];
+
+
+/*var json = JSON.stringify(marketDATA);
+fs.writeFile('marketData.json', json, function(err, result) {
+    if(err) console.log('error', err);
+}); */
 
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oYW5nIiwiYSI6ImNqdGM1eThxcjB0OHU0NHA0NnE2ZHRsa2UifQ.MV8JZhwT4IeduQPcy2zSAg';
@@ -36,7 +65,7 @@ linkers = 'input.html';
 // create DOM element for the marker
 
 
-function makeMarker(company, location) {
+function makeMarker(company, location, id) {
     var container = document.getElementById('container');
     var newMarker = document.createElement('div');
     newMarker.id = "marker";
@@ -47,7 +76,8 @@ function makeMarker(company, location) {
 
     var button = document.createElement('button');
     button.classList.add("mapboxgl-popupButton");
-    button.setAttribute('onclick', 'window.location.href = linkers');
+    button.id = id;
+    button.setAttribute('onclick', 'window.location.href=linkers;');
     button.innerText = "Submit Request";
     popupContainer.appendChild(text);
     popupContainer.appendChild(button);
@@ -57,12 +87,23 @@ function makeMarker(company, location) {
         .setLngLat(location)
         .setPopup(popup) // sets a popup on this marker
         .addTo(map);
+
+
+
+
 }
-for(i = 0; i < marketDATA.length; i++) {
+var int = 0;
+db.collection("markers").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.data()['company']);
+        console.log(doc.data()['location']);
+        makeMarker(doc.data()['company'],doc.data()['location'],int);
+        int++;
+    });
+});
 
-    makeMarker(marketDATA[i]['company'],marketDATA[i]['location']);
 
-};
 
 
 

@@ -19,6 +19,11 @@ body {
     margin-bottom: .5rem;
 }
 
+.field{
+    color: #f2f2f2;
+    margin-right: -5%;
+}
+
 .form-control {
     display: block;
     width: 95%;
@@ -66,8 +71,23 @@ body {
 }
 
 #nonLawEnforcement{
-    /* display:none; */
+    display: none;
     margin-top: 5%;
     margin-left: 5%;
     margin-right: 10%;
 }
+
+
+.geocoder {
+     width: 100%;
+     top: 10px;
+     height: 50px;
+ }
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+#map {
+    margin-top: 75px;
+    display: none;
+}
+

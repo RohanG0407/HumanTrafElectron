@@ -11,12 +11,12 @@ realReqBtn.addEventListener("click", function(){
     document.getElementById("car_model").value = "";
     document.getElementById("address").value = "";
     document.getElementById("radius").value = "";
-    
+
     requestTxt.innerHTML = "Request Sending...";
-    
-        setTimeout(function(){
-          requestTxt.innerHTML = "Request Sent";
-            }, 3000);
+
+    setTimeout(function(){
+        requestTxt.innerHTML = "Request Sent";
+    }, 3000);
 
 });
 
