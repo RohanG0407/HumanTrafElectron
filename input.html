@@ -1,51 +1,56 @@
 <html lang="en">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='navbar.css'>
-<style media="screen">
-    #custom-button {font-size: 4vw;font-size: 4vh;padding: 10px;color: white;background-color : blue;border: 1px solid #000;border-radius: 3px;cursor: pointer;}
-    #custom-text{font-size: 2vw;font-size: 2vh;right: 10px;left: 10px;padding: 10px;color: black;}
-    #custom-requestbutton{padding: 10px;color: white;background-color : blue;border: 1px solid #000;border-radius: 3px;font-size: 4vw;font-size: 4vh;}
-    .box{width: 50%;height: 90%;position: absolute;right: 5%; bottom: 5%;border: 5px solid grey;}
-    .box1{width: 40%;height: 60%;position: absolute;left: 2.5%; bottom: 5%;border: 5px solid grey;}
-    #carColor{z-index:1000; }
-    #carModel{ z-index:1000; }
-    #carAddress{ z-index:1000; }
-    #carRadius{ z-index:1000; }
-</style>
-<body>
-<div class="navbar">
-    <a href="mainWindow.html">Home</a>
-    <a href="mainWindow.html">Import</a>
-    <a href="mainWindow.html">Inbox</a>
-    <a href="mainWindow.html">User Options</a>
-    <button id='logout' onclick='logOut()'>Logout</button>
-</div>
-<input type="file" id="real-file" hidden="hidden" multiple="multiple" />
-<input type="button" id="real-requestbutton" hidden="hidden" />
-<button type="button" id="custom-button" style="position:absolute; left: 5%; top: 5%">Upload Videos</button>
-<button type="button" id="custom-requestbutton" style="position:absolute; right: 13%; bottom: 13%;cursor: pointer;" onclick="storeRequest()">Submit Request</button>
+    <meta charset="UTF-8">
+  
+    <link rel='stylesheet' href='navbar.css'>
+    <link rel= 'stylesheet' href='input.css'>
+    <style media="screen">
+        
+    </style>
+    <body>
+        <div class="navbar">
+            <a href="mainWindow.html">Home</a>
+            <a href="mainWindow.html">Import</a>
+            <a href="mainWindow.html">Inbox</a>
+            <a href="mainWindow.html">User Options</a>
+        </div>
+        
+        <input type="file" id="real-file" hidden="hidden" multiple="multiple" />
+        <button type="button" id="custom-button" class="btn" style="width:30%;height:15%;position: absolute; left:6.5%; top: 10%; font-size:4vw">Upload Videos</button>
+        <p><span id="custom-text">No file chosen, yet.</span> </p>
+<!--        <p><span id="request-text">Request Sent Successfully!</span> </p>-->
+        
+        <div id="requestForm"> 
+            <form>
+                <fieldset>
+                    
+                    <label id= "car_color_label"> Color:</label>
+                    <input id= 'car_color' type="text" class="form-control" placeholder="Black(Example)">
+               
+                
+                    <label id="car_model_label">Car Model:</label>
+                    <input id='car_model' type="text" class="form-control" placeholder='Honda Civic'>
+                
+                    <label id="address_label">Address:</label>
+                    <input id='address' type="text" class="form-control" placeholder='42 Legends Way'>
+                
+                    <label id="radius_label">Radius:</label>
+                   <input id="radius" type="text" class="form-control" placeholder='10 Miles'>
+              
+                    <button id="submitRequests" type="button" class="btn" style="width:30%;height:20%; font-size:2vw">Submit Request</button>
+                    <span id="request-text"></span> 
+                </fieldset>
+            </form>
+        </div>
 
-<p><span id="custom-text" style="width:30%;height:10%;position:absolute; left: 10%; top:20% ">No file chosen, yet.</span> </p>
+        <div class="box">
+            <center><h1 style="font-size:3vw">Request Footage</h1></center>
+        </div>
+        <div class="box1">
+            <center><h1 style="font-size:3vw">Map</h1></center>
+        </div>
 
-<input type = "text" id = "carColor" style="position: absolute; left: 59%; top: 19%; width: 20%; height:7%; font-size: 2vw; font-size: 2vh;" />
-<input type = "text" id = "carModel" style="position: absolute; left: 59.5%; top: 32%; width: 20%; height:7%; font-size: 2vw;font-size: 2vh;" />
-<input type = "text" id = "carAddress" style="position: absolute; left: 57.5%; top: 45%; width: 20%; height:7%; font-size: 2vw;font-size: 2vh;" />
-<input type = "text" id = "carRadius" style="position: absolute; left: 56%; top: 59%; width: 20%; height:7%; font-size: 2vw;font-size: 2vh;" />
-
-<p style="position: absolute; left: 47%; top: 15%; font-size: 2vw; font-size: 2vh">Car Color:</p>
-<p style="position: absolute; left: 47%; top: 28%; font-size: 2vw; font-size: 2vh">Car Model:</p>
-<p style="position: absolute; left: 47%; top: 41%; font-size: 2vw; font-size: 2vh">Address:</p>
-<p style="position: absolute; left: 47%; top: 56%; font-size: 2vw; font-size: 2vh">Radius:</p>
-
-<div class="box">
-    <center><h1 style="font-size:3vw">Request Footage</h1></center>
-</div>
-<div class="box1">
-    <center><h1 style="font-size:3vw">Map</h1></center>
-</div>
-
-<script>
-    require('./input.js');
-</script>
-</body>
+        <script>
+            require('./input.js');
+        </script>
+    </body>
 </html>
