@@ -1,4 +1,7 @@
-
+var make;
+var model;
+var year;
+var type;
 carDATA = [
     {
         make: "Honda",
@@ -38,38 +41,68 @@ rowDATA = [
     }
 ];
 
-function addRow(agency, date, timeframe) {
+function addRow(agency, date, timeframe, i) {
+   /* console.log("123");
     var bound = document.getElementById('rows');
     var newRow = document.createElement('tr');
     newRow.id = "extraRow";
     bound.appendChild(newRow);
     var agencycell = document.createElement('td');
-    agencycell.classList.add() = "agencycolum";
+    agencycell.classList.add("agencycolum");
     var datecell = document.createElement('td');
-    datecell.classList.add() = "datecolum";
+    datecell.classList.add("datecolum");
     var timeframecell = document.createElement('td');
-    timeframecell.classList.add() = "timecolum";
+    timeframecell.classList.add("timecolum");
     var upload = document.createElement('button');
-    agencycell.innerText = agency;
+    agencycell.innerHTML = agency;
     datecell.innerText = date;
     timeframecell.innerText = timeframe;
     var uploadcell = document.createElement('td');
-    uploadcell.classList.add() = "uploadbuttons";
+    uploadcell.classList.add("uploadbuttons");
     uploadcell.innerHTML = upload;
-    upload.onclick = ""; 
+    upload.onclick = "";
     upload.innerText = "Upload";
+    */
+    var table = document.getElementById("clientInbox");
+    var newRow = table.insertRow(table.length);
+    var agencycell = newRow.insertCell(0);
+    var datecell = newRow.insertCell(1);
+    var timeframecell = newRow.insertCell(2);
+    var buttoncell = newRow.insertCell(3);
+    var btn = document.createElement('input');
+    btn.type = "button";
+    btn.className = "btn";
+    btn.id = i;
+    btn.value = "Upload";
+    buttoncell.appendChild(btn);
+    agencycell.innerHTML = agency;
+    datecell.innerText = date;
+    timeframecell.innerText = timeframe;
+
+}
 
     for (i = 0; i < rowDATA.length; i++) {
+        addRow(rowDATA[i]['agency'], rowDATA[i]['date'], rowDATA[i]['timeframe'], i);
 
-        addRow(rowDATA[i]['agency'], rowDATA[i]['date'], rowDATA[i]['timeframe']);
-
-    };
-    window.onload = function what() {
-        document.getElementById('accuracy').innerHTML = 'Accuracy: ' + this.accuracy + "%";
-        document.getElementById('model').innerHTML = 'Model: ' + this.model;
-        document.getElementById('make').innerHTML = 'Make: ' + this.make;
-        document.getElementById('year').innerHTML = 'Year: ' + this.year;
-        document.getElementById('color').innerHTML = 'Color: ' + this.color;
-        document.getElementById('license_number').innerHTML = 'License Plate: ' + this.licensePlate;
-    };
-}
+};
+var testbutton0 = document.getElementById(0);
+var testbutton1 = document.getElementById(1);
+var testbutton2 = document.getElementById(2);
+    testbutton0.addEventListener("click", function () {
+        make = carDATA[0]['make'];
+        model = carDATA[0]['model'];
+        year = carDATA[0]['year'];
+        type = carDATA[0]['type'];
+    });
+testbutton1.addEventListener("click", function () {
+    make = carDATA[1]['make'];
+    model = carDATA[1]['model'];
+    year = carDATA[1]['year'];
+    type = carDATA[1]['type'];
+});
+testbutton2.addEventListener("click", function () {
+    make = carDATA[2]['make'];
+    model = carDATA[2]['model'];
+    year = carDATA[2]['year'];
+    type = carDATA[2]['type'];
+});
