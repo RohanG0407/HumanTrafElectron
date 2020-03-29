@@ -3,27 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>User Login</title>
+    <link href="userAuth.css" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-auth.js"></script>
-    <link href="userAuth.css" rel="stylesheet">
-
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
 </head>
 <body>
 
 
-    <fieldset id='login'>
-        <legend style='color: white'>Authentication</legend>
-        <label id='user_label' for="user">Enter username</label><br>
-        <input type="text" class='form-control' id="user" name="user"><br>
-        <label for="password" id="pass_label">Enter password</label><br>
-        <input type="password" class='form-control' id="password" name="password"><br>
-        <input type="checkbox" class="form-check-input" id="checkBox">
-        <label id="check" class="form-check-label" for="checkBox">Law Enforcement</label><br>
-        <button id="signIn" class="btn">Sign In</button>
-        <button id="signUp" class="btn">Sign Up</button>
-    </fieldset>
-        
- 
+<fieldset id='login'>
+    <legend style='color: white'>Authentication</legend>
+    <label id='user_label' for="user">Enter username</label><br>
+    <input type="text" class='form-control' id="user" name="user"><br>
+    <label for="password" id="pass_label">Enter password</label><br>
+    <input type="password" class='form-control' id="password" name="password"><br>
+    <input type="checkbox" class="form-check-input" id="checkBox" onclick="myFunction()">
+    <script>
+        function myFunction() {
+            var checkBox = document.getElementById('checkBox');
+            var form = document.getElementById('nonLawEnforcement');
+            if(checkBox.checked == true) {
+                form.style.display = "block";
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    </script>
+    <label id="check" class="form-check-label" for="checkBox">Not Law Inforcement</label><br>
+    <button id="signIn" class="btn">Sign In</button>
+    <button id="signUp" class="btn">Sign Up</button>
+</fieldset>
+
+
 
 
 <form id='nonLawEnforcement'>
@@ -33,11 +44,15 @@
         <input type="text" class='form-control' id='organization' name='organization'>
         <label id='address_label' for='address'>Organization Address</label>
         <input type='text' class='form-control' id='address' name='address'>
+        <button id="signUp2" class="btn">Sign Up</button>
     </fieldset>
 </form>
 
+<script src="main.js"></script>
+<script src="./userAuth.js"></script>
 <script>
     require('./userAuth.js')
+    require("firebase/firestore");
 </script>
 </body>
 </html>
