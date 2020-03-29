@@ -44,8 +44,9 @@ signIn.addEventListener('click', function () {
         //If user successfully signs in then go to home page
         document.location.href = "mainWindow.html";
 
-      //logs errors
+        //logs errors
     }).catch(function (error) {
+        console.log("Error")
         if(error != null) {
             console.log(error.message);
             return;
