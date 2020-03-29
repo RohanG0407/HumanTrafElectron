@@ -42,27 +42,27 @@ rowDATA = [
 ];
 
 function addRow(agency, date, timeframe, i) {
-   /* console.log("123");
-    var bound = document.getElementById('rows');
-    var newRow = document.createElement('tr');
-    newRow.id = "extraRow";
-    bound.appendChild(newRow);
-    var agencycell = document.createElement('td');
-    agencycell.classList.add("agencycolum");
-    var datecell = document.createElement('td');
-    datecell.classList.add("datecolum");
-    var timeframecell = document.createElement('td');
-    timeframecell.classList.add("timecolum");
-    var upload = document.createElement('button');
-    agencycell.innerHTML = agency;
-    datecell.innerText = date;
-    timeframecell.innerText = timeframe;
-    var uploadcell = document.createElement('td');
-    uploadcell.classList.add("uploadbuttons");
-    uploadcell.innerHTML = upload;
-    upload.onclick = "";
-    upload.innerText = "Upload";
-    */
+    /* console.log("123");
+     var bound = document.getElementById('rows');
+     var newRow = document.createElement('tr');
+     newRow.id = "extraRow";
+     bound.appendChild(newRow);
+     var agencycell = document.createElement('td');
+     agencycell.classList.add("agencycolum");
+     var datecell = document.createElement('td');
+     datecell.classList.add("datecolum");
+     var timeframecell = document.createElement('td');
+     timeframecell.classList.add("timecolum");
+     var upload = document.createElement('button');
+     agencycell.innerHTML = agency;
+     datecell.innerText = date;
+     timeframecell.innerText = timeframe;
+     var uploadcell = document.createElement('td');
+     uploadcell.classList.add("uploadbuttons");
+     uploadcell.innerHTML = upload;
+     upload.onclick = "";
+     upload.innerText = "Upload";
+     */
     var table = document.getElementById("clientInbox");
     var newRow = table.insertRow(table.length);
     var agencycell = newRow.insertCell(0);
@@ -84,8 +84,8 @@ function addRow(agency, date, timeframe, i) {
 
 }
 
-    for (i = 0; i < rowDATA.length; i++) {
-        addRow(rowDATA[i]['agency'], rowDATA[i]['date'], rowDATA[i]['timeframe'], i);
+for (i = 0; i < rowDATA.length; i++) {
+    addRow(rowDATA[i]['agency'], rowDATA[i]['date'], rowDATA[i]['timeframe'], i);
 
 };
 var testbutton0 = document.getElementById(0);
@@ -93,12 +93,12 @@ var testbutton1 = document.getElementById(1);
 var testbutton2 = document.getElementById(2);
 testbutton0.addEventListener("click", function () {
     console.log("123");
-        make = carDATA[0]['make'];
-        model = carDATA[0]['model'];
-        year = carDATA[0]['year'];
-        type = carDATA[0]['type'];
-        window.location.href = './input.html';
-    });
+    make = carDATA[0]['make'];
+    model = carDATA[0]['model'];
+    year = carDATA[0]['year'];
+    type = carDATA[0]['type'];
+    window.location.href = './input.html';
+});
 testbutton1.addEventListener("click", function () {
     make = carDATA[1]['make'];
     model = carDATA[1]['model'];

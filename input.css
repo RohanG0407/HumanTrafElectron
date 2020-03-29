@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Mar 28, 2020, 10:32:42 PM
     Author     : andre_000
 */
@@ -118,7 +118,7 @@ body {
     width: 50%;
     height: 85%;
     position: absolute;
-    right: 5%; 
+    right: 5%;
     bottom: 3%;
     border: 5px solid grey;
 } */
