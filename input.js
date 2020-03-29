@@ -31,8 +31,9 @@ realFileBtn.addEventListener("click", function () {
                 throw err;
             console.log('Move complete.');
         });
-       // document.getElementById('video').setAttribute('src', 'test.mp4');
-        //document.getElementById('video').play();
+        document.getElementById('video').setAttribute('src', '/uploads/test.mp4');
+        document.getElementById('video').load();
+        document.getElementById('video').play();
     } else {
         customTxt.innerHTML = "No file chosen.";
     }
