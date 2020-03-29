@@ -23,7 +23,7 @@ app.on('ready', function () {
     });
 
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'outputWindow.html'),
+        pathname: path.join(__dirname, 'userAuth.html'),
         protocol: 'file:',
         slashes: true
     }));
