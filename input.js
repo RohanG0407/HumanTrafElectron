@@ -6,25 +6,22 @@ var fs = require('fs');
 var path = require('path');
 
 
-realReqBtn.addEventListener("click", function(){
+realReqBtn.addEventListener("click", function () {
     document.getElementById("car_type").value = "";
     document.getElementById("car_model").value = "";
     document.getElementById("address").value = "";
     document.getElementById("radius").value = "";
-    
+
     requestTxt.innerHTML = "Request Sending...";
-    
-        setTimeout(function(){
-          requestTxt.innerHTML = "Request Sent";
-            }, 3000);
+
+    setTimeout(function () {
+        requestTxt.innerHTML = "Request Sent";
+    }, 3000);
 
 });
 
 realFileBtn.addEventListener("click", function () {
     if (realFileBtn.value) {
-        customTxt.innerHTML = realFileBtn.value.match(
-            /[\/\\]([\w\d\s\.\-\(\)]+)$/
-        )[1]
         customTxt.innerHTML = "Upload successful!";
 
         const thePath = path.join(document.getElementById('file_button').files[0].path);
@@ -34,6 +31,8 @@ realFileBtn.addEventListener("click", function () {
                 throw err;
             console.log('Move complete.');
         });
+       // document.getElementById('video').setAttribute('src', 'test.mp4');
+        //document.getElementById('video').play();
     } else {
         customTxt.innerHTML = "No file chosen.";
     }
