@@ -35,5 +35,5 @@ window.onload = function what() {
     document.getElementById('make').innerHTML = 'Make: ' + this.make;
     document.getElementById('year').innerHTML = 'Year: ' + this.year;
     document.getElementById('color').innerHTML = 'Color: ' + this.color;
-    document.getElementById('license_number').innerHTML = 'LicensePlate: ' + this.licensePlate;
+    document.getElementById('license_number').innerHTML = 'License Plate: ' + this.licensePlate;
 };
