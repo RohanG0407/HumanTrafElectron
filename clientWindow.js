@@ -74,6 +74,9 @@ function addRow(agency, date, timeframe, i) {
     btn.className = "btn";
     btn.id = i;
     btn.value = "Upload";
+    console.log("123");
+    //btn.setAttribute('onclick', "make = carDATA[i]['make']; model = carDATA[i]['model']; year = carDATA[i]['year']; type = carDATA[i]['type']; window.location.href = './input.html'");
+    console.log(make);
     buttoncell.appendChild(btn);
     agencycell.innerHTML = agency;
     datecell.innerText = date;
@@ -88,21 +91,25 @@ function addRow(agency, date, timeframe, i) {
 var testbutton0 = document.getElementById(0);
 var testbutton1 = document.getElementById(1);
 var testbutton2 = document.getElementById(2);
-    testbutton0.addEventListener("click", function () {
+testbutton0.addEventListener("click", function () {
+    console.log("123");
         make = carDATA[0]['make'];
         model = carDATA[0]['model'];
         year = carDATA[0]['year'];
         type = carDATA[0]['type'];
+        window.location.href = './input.html';
     });
 testbutton1.addEventListener("click", function () {
     make = carDATA[1]['make'];
     model = carDATA[1]['model'];
     year = carDATA[1]['year'];
     type = carDATA[1]['type'];
+    window.location.href = './input.html';
 });
 testbutton2.addEventListener("click", function () {
     make = carDATA[2]['make'];
     model = carDATA[2]['model'];
     year = carDATA[2]['year'];
     type = carDATA[2]['type'];
+    window.location.href = './input.html';
 });
