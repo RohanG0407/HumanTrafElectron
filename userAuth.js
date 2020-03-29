@@ -1,4 +1,5 @@
-
+const firebase = require("firebase/app");
+require("firebase/auth");
 //firebase API config/key
 firebaseConfig = {
     apiKey: "AIzaSyDQm4jUuneS38vvPSjwhCP7JnT4IxQUtT8",
@@ -42,7 +43,7 @@ signIn.addEventListener('click', function () {
 
     firebase.auth().signInWithEmailAndPassword(email,password).then(function () {
         //If user successfully signs in then go to home page
-        document.location.href = "mainWindow.html";
+        window.location.href = "mainWindow.html";
 
         //logs errors
     }).catch(function (error) {

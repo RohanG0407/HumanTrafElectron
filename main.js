@@ -1,8 +1,7 @@
 const electron = require("electron");
 const url = require("url");
 const path = require("path");
-const firebase = require("firebase/app");
-require("firebase/auth");
+
 
 const {app, BrowserWindow, Menu} = electron;
 
