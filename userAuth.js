@@ -1,7 +1,4 @@
 //firebase API config/key
-const firebase = require("firebase/app");
-require("firebase/auth");
-
 firebaseConfig = {
     apiKey: "AIzaSyDQm4jUuneS38vvPSjwhCP7JnT4IxQUtT8",
     databaseURL: "https://carnet-e1efe.firebaseio.com",
@@ -46,7 +43,7 @@ signIn.addEventListener('click', function () {
         //If user successfully signs in then go to home page
         window.location.href = "mainWindow.html";
 
-        //logs errors
+      //logs errors
     }).catch(function (error) {
         if(error != null) {
             console.log(error.message);
@@ -54,4 +51,3 @@ signIn.addEventListener('click', function () {
         }
     })
 });
-
