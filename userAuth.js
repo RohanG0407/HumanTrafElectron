@@ -20,7 +20,7 @@ var signUp = document.getElementById('signUp');
 //When user clicks signUP button
 signUp.addEventListener('click', function () {
     var email = document.getElementById('user').value;
-    var password = document.getElementById('password').value;
+    var password = document.getElementById('pass').value;
 
     //Create a user in firebase and log errors
     firebase.auth().createUserWithEmailAndPassword(email,password).then(function () {
@@ -38,7 +38,7 @@ signUp.addEventListener('click', function () {
 //When user clicks signIn button
 signIn.addEventListener('click', function () {
     var email = document.getElementById('user').value;
-    var password = document.getElementById('password').value;
+    var password = document.getElementById('pass').value;
 
     firebase.auth().signInWithEmailAndPassword(email,password).then(function () {
         //If user successfully signs in then go to home page

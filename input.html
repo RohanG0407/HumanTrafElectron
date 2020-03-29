@@ -1,5 +1,6 @@
 <html lang="en">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='navbar.css'>
     <style media="screen">
         #custom-button {font-size: 4vw;font-size: 4vh;padding: 10px;color: white;background-color : blue;border: 1px solid #000;border-radius: 3px;cursor: pointer;}
         #custom-text{font-size: 2vw;font-size: 2vh;right: 10px;left: 10px;padding: 10px;color: black;}
@@ -12,6 +13,12 @@
         #carRadius{ z-index:1000; }
     </style>
     <body>
+        <div class="navbar">
+            <a href="mainWindow.html">Home</a>
+            <a href="mainWindow.html">Import</a>
+            <a href="mainWindow.html">Inbox</a>
+            <a href="mainWindow.html">User Options</a>
+        </div>
         <input type="file" id="real-file" hidden="hidden" multiple="multiple" />
         <input type="button" id="real-requestbutton" hidden="hidden" />
         <button type="button" id="custom-button" style="position:absolute; left: 5%; top: 5%">Upload Videos</button>
