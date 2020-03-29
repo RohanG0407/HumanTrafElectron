@@ -30,3 +30,11 @@
     height: 100%;
     cursor: pointer;
 }
+
+#account_type {
+    padding: 14px 16px;
+    float: right;
+    font-size: 17px;
+    text-decoration: none;
+    text-align: center;
+}
