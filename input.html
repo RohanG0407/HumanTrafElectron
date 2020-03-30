@@ -4,6 +4,15 @@
 <link rel='stylesheet' href='navbar.css'>
 <link rel='stylesheet' href='input.css'>
 <iframe id="inputframe" src="input.html" style="display:none"></iframe>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+<link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+        type="text/css"
+/>
 
 <style media="screen">
 </style>
@@ -27,12 +36,21 @@
         <span id='no_file'>No file chosen, yet</span>
         <div id='video_preview'>
             <video id="video" poster="thumbnail.jpg" autoplay>
-                <source id='mp4Source' src="video1.mp4" type=video/mp4 />
+                <source id='mp4Source' src="./uploads/test.mp4" type=video/mp4 />
             </video>
         </div>
     </div>
     <div id='right'>
-        <div class="box1">
+        <div id='penis' class="box1">
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oYW5nIiwiYSI6ImNqdGM1eThxcjB0OHU0NHA0NnE2ZHRsa2UifQ.MV8JZhwT4IeduQPcy2zSAg';
+                var map = new mapboxgl.Map({
+                    container: 'penis',
+                    style: 'mapbox://styles/rohang/ck8bpt2bn29951iqielnml0tq',
+                    center: [-79.4512, 43.6568],
+                    zoom: 13
+                });
+            </script>
         </div>
 
         <fieldset id='request_footage_form'>
@@ -45,7 +63,38 @@
             <input id='car_model' type="text" class="form-control" placeholder='Honda Civic'>
 
             <label class="label">Address:</label>
-            <input id='address' type="text" class="form-control" placeholder='42 Legends Way'>
+            <div id="map"></div>
+            <div id="geocoder" class="geocoder"></div>
+
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oYW5nIiwiYSI6ImNqdGM1eThxcjB0OHU0NHA0NnE2ZHRsa2UifQ.MV8JZhwT4IeduQPcy2zSAg';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [-79.4512, 43.6568],
+                    zoom: 13
+                });
+                var geocoder = new MapboxGeocoder({
+                    accessToken: mapboxgl.accessToken,
+                    mapboxgl: mapboxgl
+                });
+
+                document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+                geocoder.on('result', function(results) {
+                    address = results['result']['center'];
+                    console.log(address);
+
+                });
+
+                var container = document.getElementById('right');
+                var newMarker = document.createElement('div');
+                newMarker.id = "marker";
+                container.appendChild(newMarker);
+
+                new mapboxgl.Marker(newMarker)
+                    .setLngLat(address)// sets a popup on this marker
+                    .addTo(map);
+            </script>
 
             <label class="label">Radius:</label>
             <input id="radius" type="text" class="form-control" placeholder='10 Miles'>

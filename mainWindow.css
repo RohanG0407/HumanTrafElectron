@@ -9,7 +9,6 @@ body {
 
 
 #container {
-    position: absolute;
     bottom: 0;
     height: calc(100% - 50px);
     width: 100%;

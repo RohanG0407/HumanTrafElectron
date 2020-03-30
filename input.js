@@ -12,6 +12,7 @@ realReqBtn.addEventListener("click", function () {
     document.getElementById("address").value = "";
     document.getElementById("radius").value = "";
 
+
     requestTxt.innerHTML = "Request Sending...";
 
     setTimeout(function () {
@@ -26,6 +27,10 @@ realFileBtn.addEventListener("click", function () {
 
         const thePath = path.join(document.getElementById('file_button').files[0].path);
         const newPath = path.join(__dirname, '/uploads/test.mp4');
+        var video = document.getElementById('mp4Source');
+            video.setAttribute('src', newPath);
+        document.getElementById('video').load();
+        document.getElementById('video').play();
         fs.copyFile(thePath, newPath, function (err) {
             if (err)
                 throw err;
